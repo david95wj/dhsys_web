@@ -1,0 +1,257 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue May 05 13:38:17 CST 2015</td>
+</tr>
+<tr><td>Total time:</td><td>2 seconds (2974 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test.ServiceTest.testModule()'><b>testModule</b><br>Test class: test.ServiceTest</td>
+<td><div><pre>org.springframework.dao.InvalidDataAccessResourceUsageException: could not initialize a collection: [com.dhsys.web.entity.Dh_SysModule.modules#20]; SQL [select modules0_.DH_SYSMODULE_MODULEID as DH1_2_, modules0_.modules_MODULEID as modules2_2_, dh_sysmodu1_.MODULEID as MODULEID1_0_, dh_sysmodu1_.MODULEDESC as MODULEDESC1_0_, dh_sysmodu1_.MODULEICON as MODULEICON1_0_, dh_sysmodu1_.MODULENAME as MODULENAME1_0_, dh_sysmodu1_.MODULEPATH as MODULEPATH1_0_, dh_sysmodu1_.MODULESTATE as MODULEST6_1_0_, dh_sysmodu1_.MODULETYPE as MODULETYPE1_0_, dh_sysmodu1_.PMODULEID as PMODULEID1_0_, dh_sysmodu2_.MODULEID as MODULEID1_1_, dh_sysmodu2_.MODULEDESC as MODULEDESC1_1_, dh_sysmodu2_.MODULEICON as MODULEICON1_1_, dh_sysmodu2_.MODULENAME as MODULENAME1_1_, dh_sysmodu2_.MODULEPATH as MODULEPATH1_1_, dh_sysmodu2_.MODULESTATE as MODULEST6_1_1_, dh_sysmodu2_.MODULETYPE as MODULETYPE1_1_, dh_sysmodu2_.PMODULEID as PMODULEID1_1_ from DH_SYSMODULE_DH_SYSMODULE modules0_ left outer join DH_SYSMODULE dh_sysmodu1_ on modules0_.modules_MODULEID=dh_sysmodu1_.MODULEID left outer join DH_SYSMODULE dh_sysmodu2_ on dh_sysmodu1_.PMODULEID=dh_sysmodu2_.MODULEID where modules0_.DH_SYSMODULE_MODULEID=?]; nested exception is org.hibernate.exception.SQLGrammarException: could not initialize a collection: [com.dhsys.web.entity.Dh_SysModule.modules#20]
+	at org.springframework.orm.hibernate3.SessionFactoryUtils.convertHibernateAccessException(SessionFactoryUtils.java:635)
+	at org.springframework.orm.hibernate3.HibernateAccessor.convertHibernateAccessException(HibernateAccessor.java:412)
+	at org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:411)
+	at org.springframework.orm.hibernate3.HibernateTemplate.executeWithNativeSession(HibernateTemplate.java:374)
+	at org.springframework.orm.hibernate3.HibernateTemplate.find(HibernateTemplate.java:912)
+	at org.springframework.orm.hibernate3.HibernateTemplate.find(HibernateTemplate.java:904)
+	at com.dhsys.web.persistent.SysModuleDao.getModuleTree(SysModuleDao.java:18)
+	at test.ServiceTest.testModule(ServiceTest.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:707)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.hibernate.exception.SQLGrammarException: could not initialize a collection: [com.dhsys.web.entity.Dh_SysModule.modules#20]
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:90)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.loader.Loader.loadCollection(Loader.java:2022)
+	at org.hibernate.loader.collection.CollectionLoader.initialize(CollectionLoader.java:59)
+	at org.hibernate.persister.collection.AbstractCollectionPersister.initialize(AbstractCollectionPersister.java:587)
+	at org.hibernate.event.def.DefaultInitializeCollectionEventListener.onInitializeCollection(DefaultInitializeCollectionEventListener.java:83)
+	at org.hibernate.impl.SessionImpl.initializeCollection(SessionImpl.java:1743)
+	at org.hibernate.collection.AbstractPersistentCollection.forceInitialization(AbstractPersistentCollection.java:476)
+	at org.hibernate.engine.StatefulPersistenceContext.initializeNonLazyCollections(StatefulPersistenceContext.java:867)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:264)
+	at org.hibernate.loader.Loader.doList(Loader.java:2228)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2125)
+	at org.hibernate.loader.Loader.list(Loader.java:2120)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:361)
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1148)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)
+	at org.springframework.orm.hibernate3.HibernateTemplate$30.doInHibernate(HibernateTemplate.java:921)
+	at org.springframework.orm.hibernate3.HibernateTemplate$30.doInHibernate(HibernateTemplate.java:912)
+	at org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:406)
+	... 36 more
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: 对象名 &apos;DH_SYSMODULE_DH_SYSMODULE&apos; 无效。
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:196)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1454)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:388)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:338)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:4026)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1416)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:185)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:160)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:281)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.logicalcobwebs.proxool.ProxyStatement.invoke(ProxyStatement.java:100)
+	at org.logicalcobwebs.proxool.ProxyStatement.intercept(ProxyStatement.java:57)
+	at $java.sql.Wrapper$$EnhancerByProxool$$33f51091.executeQuery(&lt;generated&gt;)
+	at org.hibernate.jdbc.AbstractBatcher.getResultSet(AbstractBatcher.java:208)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:1808)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:697)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)
+	at org.hibernate.loader.Loader.loadCollection(Loader.java:2015)
+	... 54 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace471403673", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace471403673'><pre>org.springframework.dao.InvalidDataAccessResourceUsageException: could not initialize a collection: [com.dhsys.web.entity.Dh_SysModule.modules#20]; SQL [select modules0_.DH_SYSMODULE_MODULEID as DH1_2_, modules0_.modules_MODULEID as modules2_2_, dh_sysmodu1_.MODULEID as MODULEID1_0_, dh_sysmodu1_.MODULEDESC as MODULEDESC1_0_, dh_sysmodu1_.MODULEICON as MODULEICON1_0_, dh_sysmodu1_.MODULENAME as MODULENAME1_0_, dh_sysmodu1_.MODULEPATH as MODULEPATH1_0_, dh_sysmodu1_.MODULESTATE as MODULEST6_1_0_, dh_sysmodu1_.MODULETYPE as MODULETYPE1_0_, dh_sysmodu1_.PMODULEID as PMODULEID1_0_, dh_sysmodu2_.MODULEID as MODULEID1_1_, dh_sysmodu2_.MODULEDESC as MODULEDESC1_1_, dh_sysmodu2_.MODULEICON as MODULEICON1_1_, dh_sysmodu2_.MODULENAME as MODULENAME1_1_, dh_sysmodu2_.MODULEPATH as MODULEPATH1_1_, dh_sysmodu2_.MODULESTATE as MODULEST6_1_1_, dh_sysmodu2_.MODULETYPE as MODULETYPE1_1_, dh_sysmodu2_.PMODULEID as PMODULEID1_1_ from DH_SYSMODULE_DH_SYSMODULE modules0_ left outer join DH_SYSMODULE dh_sysmodu1_ on modules0_.modules_MODULEID=dh_sysmodu1_.MODULEID left outer join DH_SYSMODULE dh_sysmodu2_ on dh_sysmodu1_.PMODULEID=dh_sysmodu2_.MODULEID where modules0_.DH_SYSMODULE_MODULEID=?]; nested exception is org.hibernate.exception.SQLGrammarException: could not initialize a collection: [com.dhsys.web.entity.Dh_SysModule.modules#20]
+	at org.springframework.orm.hibernate3.SessionFactoryUtils.convertHibernateAccessException(SessionFactoryUtils.java:635)
+	at org.springframework.orm.hibernate3.HibernateAccessor.convertHibernateAccessException(HibernateAccessor.java:412)
+	at org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:411)
+	at org.springframework.orm.hibernate3.HibernateTemplate.executeWithNativeSession(HibernateTemplate.java:374)
+	at org.springframework.orm.hibernate3.HibernateTemplate.find(HibernateTemplate.java:912)
+	at org.springframework.orm.hibernate3.HibernateTemplate.find(HibernateTemplate.java:904)
+	at com.dhsys.web.persistent.SysModuleDao.getModuleTree(SysModuleDao.java:18)
+	at test.ServiceTest.testModule(ServiceTest.java:66)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.MethodInvocationHelper$1.runTestMethod(MethodInvocationHelper.java:200)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:212)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:707)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+Caused by: org.hibernate.exception.SQLGrammarException: could not initialize a collection: [com.dhsys.web.entity.Dh_SysModule.modules#20]
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:90)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:66)
+	at org.hibernate.loader.Loader.loadCollection(Loader.java:2022)
+	at org.hibernate.loader.collection.CollectionLoader.initialize(CollectionLoader.java:59)
+	at org.hibernate.persister.collection.AbstractCollectionPersister.initialize(AbstractCollectionPersister.java:587)
+	at org.hibernate.event.def.DefaultInitializeCollectionEventListener.onInitializeCollection(DefaultInitializeCollectionEventListener.java:83)
+	at org.hibernate.impl.SessionImpl.initializeCollection(SessionImpl.java:1743)
+	at org.hibernate.collection.AbstractPersistentCollection.forceInitialization(AbstractPersistentCollection.java:476)
+	at org.hibernate.engine.StatefulPersistenceContext.initializeNonLazyCollections(StatefulPersistenceContext.java:867)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:264)
+	at org.hibernate.loader.Loader.doList(Loader.java:2228)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2125)
+	at org.hibernate.loader.Loader.list(Loader.java:2120)
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:401)
+	at org.hibernate.hql.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:361)
+	at org.hibernate.engine.query.HQLQueryPlan.performList(HQLQueryPlan.java:196)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1148)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:102)
+	at org.springframework.orm.hibernate3.HibernateTemplate$30.doInHibernate(HibernateTemplate.java:921)
+	at org.springframework.orm.hibernate3.HibernateTemplate$30.doInHibernate(HibernateTemplate.java:912)
+	at org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:406)
+	... 36 more
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: 对象名 &apos;DH_SYSMODULE_DH_SYSMODULE&apos; 无效。
+	at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:196)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1454)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:388)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:338)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:4026)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1416)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:185)
+	at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:160)
+	at com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:281)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.logicalcobwebs.proxool.ProxyStatement.invoke(ProxyStatement.java:100)
+	at org.logicalcobwebs.proxool.ProxyStatement.intercept(ProxyStatement.java:57)
+	at $java.sql.Wrapper$$EnhancerByProxool$$33f51091.executeQuery(&lt;generated&gt;)
+	at org.hibernate.jdbc.AbstractBatcher.getResultSet(AbstractBatcher.java:208)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:1808)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:697)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:259)
+	at org.hibernate.loader.Loader.loadCollection(Loader.java:2015)
+	... 54 more
+</pre></div></td>
+<td>0</td>
+<td>test.ServiceTest@5f326484</td></tr>
+</table><p>
+</body>
+</html>

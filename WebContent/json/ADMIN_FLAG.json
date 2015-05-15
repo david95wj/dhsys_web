@@ -1,0 +1,7 @@
+[{    
+    "adminFlagId":1,    
+    "adminFlagName":"系统管理员"   
+},{
+    "adminFlagId":2,    
+    "adminFlagName":"非系统管理员"   
+}]
